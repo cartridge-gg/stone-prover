@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # Read from stdin
-cat > program_input.json && \
+cat > input.json && \
+program-from-stdin.py < input.json && \
 
 cairo-run \
     --program program_compiled.json \
@@ -23,5 +24,4 @@ cpu_air_prover \
     --prover_config_file cpu_air_prover_config.json \
     --parameter_file cpu_air_params.json \
     -generate_annotations && \
-
 cat program_proof.json
