@@ -11,7 +11,7 @@ podman build -t example-program -f example-program.dockerfile .
 ```
 
 ```bash
-podman run -i --rm example-program < program_input.json > proof.json
+podman run -i --rm example-program < input.json > proof.json
 ```
 
 ```bash
