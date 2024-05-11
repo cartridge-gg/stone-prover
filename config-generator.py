@@ -33,8 +33,7 @@ def read_json_from_stdin() -> Dict:
     try:
         return json.load(sys.stdin)
     except json.JSONDecodeError:
-        print("Error: Invalid JSON input.")
-        raise
+        raise Exception("Error: Invalid JSON input.")
 
 def calculate_fri_step_list(n_steps: int, degree_bound: int) -> List[int]:
     """Calculate the FRI step list based on the number of steps and the degree bound."""

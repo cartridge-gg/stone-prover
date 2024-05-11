@@ -9,8 +9,8 @@ def read_json_from_stdin() -> Dict:
     try:
         return json.load(sys.stdin)
     except json.JSONDecodeError:
-        print("Error: Invalid JSON input.")
-        raise
+        raise Exception("Error: Invalid JSON input.")
+
 def json_to_file(json_data: Dict) -> List:
     # Writing the 'program' data to a file
     with open('program_compiled.json', 'w') as file:
