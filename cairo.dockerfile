@@ -29,7 +29,8 @@ FROM base as build
 # Build.
 WORKDIR /app/
 RUN bazel build //...
-RUN cargo install --git https://github.com/lambdaclass/cairo-vm --rev f4a22140018f62309ade09ecd517b40e915031b1 cairo1-run
+RUN rustup override set 1.79.0
+RUN cargo install --git https://github.com/lambdaclass/cairo-vm --rev 93f1f54f38059af89850b1c06d4c901300f9b94d cairo1-run
 
 
 FROM python:3.12.3-slim-bookworm as final
